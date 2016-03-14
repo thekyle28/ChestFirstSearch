@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.net.URL?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="873.0" styleClass="sea-bg" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MultiplayerController">
+   <stylesheets>
+   	<URL value="@../multiplayer.css" />
+	<URL value="@../application.css" />
+   </stylesheets>
+   
+   <children>
+      <Label fx:id="Title" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" layoutY="38.0" prefHeight="69.0" prefWidth="686.0" styleClass="title" stylesheets="@../application.css" text="Multiplayer" textAlignment="CENTER">
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS Bold" size="55.0" />
+         </font>
+         <textFill>
+            <Color blue="0.271" green="0.780" red="0.922" fx:id="x1" />
+         </textFill>
+      </Label>
+      <Label id="Title" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="159.0" prefHeight="77.0" prefWidth="336.0" styleClass="subtitle" stylesheets="@../multiplayer.css" text="Difficulty" textAlignment="CENTER" textFill="$x1">
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" fx:id="x2" />
+         </font>
+      </Label>
+      <VBox layoutX="98.0" layoutY="246.0" prefHeight="200.0" prefWidth="194.0">
+         <children>
+            <Pane>
+               <children>
+                  <RadioButton id="breadthFirstSearch" fx:id="Easy" mnemonicParsing="false" selected="true" text="Easy" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Difficulty" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <Pane layoutX="-2.0" layoutY="-2.0" prefHeight="52.0" prefWidth="51.0" stylesheets="@../multiplayer.css">
+                     <styleClass>
+                        <String fx:value="radio-on-btn" />
+                        <String fx:value="btn" />
+                     </styleClass>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <RadioButton id="depthFirstSearch" fx:id="Medium" layoutX="8.0" layoutY="4.0" mnemonicParsing="false" selected="false" text="Medium" textFill="WHITE" toggleGroup="$Difficulty">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </RadioButton>
+                  <Pane layoutX="-1.0" prefHeight="51.0" prefWidth="50.0" stylesheets="@../multiplayer.css">
+                     <styleClass>
+                        <String fx:value="radio-off-btn" />
+                        <String fx:value="btn" />
+                     </styleClass></Pane>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <RadioButton id="depthFirstSearch" fx:id="Hard" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" selected="false" text="Hard" textFill="WHITE" toggleGroup="$Difficulty">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </RadioButton>
+                  <Pane prefHeight="51.0" prefWidth="50.0" stylesheets="@../multiplayer.css">
+                     <styleClass>
+                        <String fx:value="radio-off-btn" />
+                        <String fx:value="btn" />
+                     </styleClass></Pane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Pane fx:id="backBtn" layoutX="14.0" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="159.0" stylesheets="@../multiplayer.css">
+         <styleClass>
+            <String fx:value="back-btn" />
+            <String fx:value="btn" />
+         </styleClass>
+      </Pane>
+      <Label id="Title" alignment="CENTER" contentDisplay="CENTER" layoutX="467.0" layoutY="159.0" prefHeight="77.0" prefWidth="336.0" styleClass="subtitle" stylesheets="@../multiplayer.css" text="Map Options" textAlignment="CENTER">
+         <textFill>
+            <Color blue="0.271" green="0.780" red="0.922" fx:id="x11" />
+         </textFill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" fx:id="x21" />
+         </font>
+      </Label>
+      <ComboBox fx:id="mapHeight" layoutX="467.0" layoutY="246.0" prefWidth="150.0" promptText="Map Height" />
+      <ComboBox fx:id="mapWidth" layoutX="635.0" layoutY="246.0" prefWidth="150.0" promptText="Map Width" />
+      <Pane fx:id="okPane" layoutX="347.0" layoutY="485.0" prefHeight="64.0" prefWidth="179.0" stylesheets="@../multiplayer.css">
+         <styleClass>
+            <String fx:value="ok-btn" />
+            <String fx:value="btn" />
+         </styleClass>
+      </Pane>
+      <Label id="Title" alignment="CENTER" contentDisplay="CENTER" layoutX="475.0" layoutY="277.0" prefHeight="71.0" prefWidth="321.0" styleClass="subtitle2" stylesheets="@../multiplayer.css" text="Treasure" textAlignment="CENTER">
+         <textFill>
+            <Color blue="0.271" green="0.780" red="0.922" fx:id="x111" />
+         </textFill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+         <font>
+            <Font name="Comic Sans MS Bold" size="30.0" fx:id="x211" />
+         </font>
+      </Label>
+      <Pane fx:id="treasureSelectPane" layoutX="515.0" layoutY="348.0">
+         <children>
+            <RadioButton id="breadthFirstSearch" fx:id="treasureSelectRBtn" mnemonicParsing="false" selected="true" text="Select location" textFill="WHITE">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Difficulty1" />
+               </toggleGroup>
+            </RadioButton>
+            <Pane layoutX="-2.0" layoutY="-3.0" prefHeight="52.0" prefWidth="51.0" stylesheets="@../multiplayer.css">
+               <styleClass>
+                  <String fx:value="radio-on-btn" />
+                  <String fx:value="btn" />
+               </styleClass>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="treasureRandomPane" layoutX="515.0" layoutY="404.0">
+         <children>
+            <RadioButton id="depthFirstSearch" fx:id="treasureRandomRBtn" layoutX="8.0" layoutY="4.0" mnemonicParsing="false" selected="false" text="Randomise" textFill="WHITE">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Difficulty2" />
+               </toggleGroup>
+            </RadioButton>
+            <Pane layoutX="-1.0" prefHeight="51.0" prefWidth="50.0" stylesheets="@../multiplayer.css">
+               <styleClass>
+                  <String fx:value="radio-off-btn" />
+                  <String fx:value="btn" />
+               </styleClass></Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

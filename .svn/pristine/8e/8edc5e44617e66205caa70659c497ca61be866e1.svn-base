@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane styleClass="main-bg" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.GameModeSelectionController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <Pane prefHeight="14.0" prefWidth="700.0" styleClass="wave" stylesheets="@../application.css" />
+            <Pane prefHeight="649.0" prefWidth="700.0" styleClass="sea-bg" stylesheets="@../application.css">
+               <children>
+                  <Pane fx:id="singlePlayerBtn" layoutX="198.0" layoutY="286.0" onMouseReleased="#gotoSinglePlayer" prefHeight="77.0" prefWidth="305.0" stylesheets="@../application.css">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="singleplayer-btn" />
+                     </styleClass>
+                  </Pane>
+                  <Pane fx:id="singlePlayerBtn" layoutX="198.0" layoutY="377.0" onMouseReleased="#gotoMultiPlayer" prefHeight="77.0" prefWidth="305.0" stylesheets="@../application.css">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="multiplayer-btn" />
+                     </styleClass>
+                  </Pane>
+                  <Text layoutX="169.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Select Your Gamemode" wrappingWidth="354.30401611328125" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets top="86.0" />
+   </padding>
+</AnchorPane>

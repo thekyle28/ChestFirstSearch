@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="740.0" prefWidth="700.0" styleClass="main-bg" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainMenuController">
+   <children>
+      <AnchorPane prefHeight="676.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <Pane layoutY="14.0" prefHeight="662.0" prefWidth="700.0" styleClass="sea-bg" stylesheets="@../application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Pane fx:id="waves" prefHeight="14.0" prefWidth="700.0" styleClass="wave" stylesheets="@../application.css" />
+            <Pane fx:id="fishPane" layoutY="14.0" prefHeight="662.0" prefWidth="700.0" />
+            <Pane layoutY="27.0" prefHeight="567.0" prefWidth="700.0">
+               <children>
+                  <Pane layoutX="185.0" layoutY="69.0" prefHeight="160.0" prefWidth="330.0" styleClass="logo" stylesheets="@../application.css" />
+                  <VBox alignment="CENTER" layoutX="240.0" layoutY="229.0" prefHeight="286.0" prefWidth="221.0" spacing="13.0">
+                     <children>
+                        <Pane fx:id="playBtn" onMouseReleased="#gotoGameSelection" prefHeight="78.0" prefWidth="220.0" stylesheets="@../application.css">
+                           <styleClass>
+                              <String fx:value="play-btn" />
+                              <String fx:value="btn" />
+                           </styleClass>
+                        </Pane>
+                        <Pane fx:id="settingsBtn" prefHeight="78.0" prefWidth="220.0" stylesheets="@../application.css">
+                           <styleClass>
+                              <String fx:value="settings-btn" />
+                              <String fx:value="btn" />
+                           </styleClass>
+                        </Pane>
+                        <Pane fx:id="quitBtn" prefHeight="78.0" prefWidth="216.0" stylesheets="@../application.css">
+                           <styleClass>
+                              <String fx:value="quit-btn" />
+                              <String fx:value="btn" />
+                           </styleClass>
+                        </Pane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets top="50.0" />
+   </padding>
+</AnchorPane>

@@ -1,0 +1,156 @@
+package gui.movement;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
+import javafx.application.Application;
+import javafx.application.Application.Parameters;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.CubicCurveTo;
+import javafx.scene.shape.LineTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
+import javafx.scene.shape.Shape;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class FishMovement {
+	
+	private static final String FISHORANGE = FishMovement.class.getClassLoader().getResource("resources/img/animals/fish-orange.png").toString();
+	private static final String FISHSALMON = FishMovement.class.getClassLoader().getResource("resources/img/animals/fish-salmon.png").toString();
+	private static final String FISHSILVER = FishMovement.class.getClassLoader().getResource("resources/img/animals/fish.png").toString();
+	
+	private int height, start, end, direction, size, duration;
+	private ImageView fish;
+	public FishMovement(){
+		initialiseRandomVariables();
+		
+		
+	}
+	
+	private void initialiseRandomVariables(){
+		height = randRange(50,550);
+		start = -200;
+		end = 800;
+		duration = randRange(7,9);
+		direction = randRange(0,1);
+		size = randRange(50,70);
+		fish = new ImageView(randomFish());
+		fish.setX(start);
+		fish.setY(height);
+		fish.setPreserveRatio(true);
+		fish.setFitWidth(size);
+		if(direction == 0){
+			start += 1000;
+			end -= 900;
+			fish.setScaleY(-1.0);
+		}
+	}
+	
+	/**
+	    * Generate Path upon which animation will occur.
+	    * 
+	    * @param pathOpacity The opacity of the path representation.
+	    * @return Generated path.
+	    */
+	   private Path generatePath()
+	   {
+	      final Path path = new Path();
+	      path.getElements().add(new MoveTo(start,height));
+	      path.getElements().add(new LineTo(end, height));
+	      path.setOpacity(0);
+	      return path;
+	   }
+	   
+	    /**
+	     * Generate random number
+	     * @param min The (included) lower bound of the range
+	     * @param max The (included) upper bound of the range
+	     *
+	     * @return The random value in the range
+	     */
+	    private int randRange(int min, int max) {
+	        return min + (int) (Math.random() * ((1 + max) - min));
+	    }
+
+	   /**
+	    * Generate the path transition.
+	    * 
+	    * @param fish Shape to travel along path.
+	    * @param path Path to be traveled upon.
+	    * @return PathTransition.
+	    */
+	   private PathTransition generatePathTransition(final ImageView fish, final Path path)
+	   {
+	      final PathTransition pathTransition = new PathTransition();
+	      pathTransition.setDuration(Duration.seconds(duration));
+	      pathTransition.setPath(path);
+	      pathTransition.setNode(fish);
+	      pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+	      pathTransition.setCycleCount(1);
+	      return pathTransition;
+	   }
+	   
+	   private String randomFish(){
+		   ArrayList<String> colours = new ArrayList<String>();
+		   colours.add(FISHORANGE);
+		   colours.add(FISHSILVER);
+		   colours.add(FISHSALMON);
+		   int rand = randRange(0,colours.size()-1);
+		   return colours.get(rand);
+	   }
+
+	   /**
+	    * Apply animation, the subject of this class.
+	    * 
+	    * @param group Group to which animation is applied.
+	    */
+	   private void applyAnimation(final Group group)
+	   {     
+	      final Path path = generatePath();
+	      group.getChildren().add(path);
+	      group.getChildren().add(fish);
+	      final PathTransition transition = generatePathTransition(fish, path);
+	      transition.onFinishedProperty().set(new EventHandler<ActionEvent>() {
+	          @Override 
+	          public void handle(ActionEvent actionEvent) {
+	              transition.stop();
+	              group.getChildren().clear();
+	          }
+	      });
+	      transition.play();
+	   }
+
+	   /**
+	    * Start the JavaFX application
+	    * 
+	    * @param stage Primary stage.
+	    * @throws Exception Exception thrown during application.
+	    */
+	   public void start(Group group)
+	   {
+	      applyAnimation(group);
+	   }
+
+	   /**
+	    * Main function for running JavaFX application.
+	    * 
+	    * @param arguments Command-line arguments; optional first argument is the
+	    *    opacity of the path to be displayed (0 effectively renders path
+	    *    invisible).
+	    */
+	   public static void main(final String[] arguments)
+	   {
+	      Application.launch(arguments);
+	   }
+}

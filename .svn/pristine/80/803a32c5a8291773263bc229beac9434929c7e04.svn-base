@@ -1,0 +1,78 @@
+@font-face {
+    font-family: Shablagoo;
+    src: url('../resources/font/shablagoo.ttf');
+}
+
+.main-bg {
+	-fx-background-color: #509fd7,
+	linear-gradient(#509fd7, #5aaeeb);
+}
+
+.sea-bg {
+	-fx-background-color: #1b7abb,
+	radial-gradient(center 50% 50%, radius 50%, #5195c4, #1b7abb);
+
+}
+
+.title {
+	-fx-font-family: 'Shablagoo';
+	-fx-font-size: 50pt;
+	-fx-fill: #fff;
+	-fx-text-alignment: center;
+}
+
+.wave {
+	-fx-background-image: url("../resources/img/wave.png");
+	-fx-background-size: 25;
+}
+
+.logo {
+	-fx-background-image: url("../resources/img/logo.png");
+	-fx-background-size: 330px;
+}
+
+.btn {
+	-fx-background-color: transparent;
+	-fx-background-size: 100%;
+	-fx-cursor: hand;
+}
+
+.play-btn {
+	-fx-background-image: url("../resources/img/buttons/play.png");
+}
+
+.play-btn:hover {
+	-fx-background-image: url("../resources/img/buttons/player-hover.png");
+}
+
+.settings-btn {
+	-fx-background-image: url("../resources/img/buttons/settings.png");	
+}
+
+.settings-btn:hover {
+	-fx-background-image: url("../resources/img/buttons/settings-hover.png");	
+}
+
+.quit-btn {
+	-fx-background-image: url("../resources/img/buttons/quit.png");	
+}
+
+.quit-btn:hover{
+	-fx-background-image: url("../resources/img/buttons/quit-hover.png");	
+}
+
+.singleplayer-btn {
+	-fx-background-image: url("../resources/img/buttons/singleplayer.png");	
+}
+
+.singleplayer-btn:hover {
+	-fx-background-image: url("../resources/img/buttons/singleplayer-hover.png");	
+}
+
+.multiplayer-btn {
+	-fx-background-image: url("../resources/img/buttons/multiplayer.png");	
+}
+
+.multiplayer-btn:hover {
+	-fx-background-image: url("../resources/img/buttons/multiplayer-hover.png");	
+}

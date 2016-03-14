@@ -1,0 +1,9 @@
+package gui.fxgraph
+
+import javafx.scene.layout.AnchorPane
+
+component Test {
+	AnchorPane {
+		//TODO Add Nodes
+	}
+}

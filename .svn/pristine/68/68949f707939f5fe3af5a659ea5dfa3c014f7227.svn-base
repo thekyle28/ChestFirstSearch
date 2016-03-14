@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="700.0" styleClass="main-bg" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.SinglePlayerController">
+  <children>
+      <Pane fx:id="start" layoutY="85.0" prefHeight="656.0" prefWidth="700.0" />
+    <Label fx:id="Title" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" layoutY="38.0" prefHeight="69.0" prefWidth="686.0" text="Single Player" textAlignment="CENTER">
+      <effect>
+        <Glow level="1.0" />
+      </effect>
+      <font>
+        <Font name="Comic Sans MS Bold" size="55.0" />
+      </font>
+      <textFill>
+        <Color blue="0.271" green="0.780" red="0.922" fx:id="x1" />
+      </textFill>
+    </Label>
+    <Button fx:id="startBtn" layoutX="381.0" layoutY="196.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="172.0" text="START" />
+    <VBox layoutX="348.0" layoutY="345.0" prefHeight="200.0" prefWidth="194.0">
+      <children>
+      	<fx:define>
+      		<ToggleGroup fx:id="algorithms" />
+      	</fx:define>
+        <RadioButton fx:id="bfsRBtn" mnemonicParsing="false" selected="true" text="Breadth First Search" textFill="WHITE">
+               <toggleGroup>
+                  <ToggleGroup fx:id="algorithms" />
+               </toggleGroup></RadioButton>
+        <RadioButton fx:id="dfsRBtn" mnemonicParsing="false" text="Depth First Search" textFill="WHITE" toggleGroup="$algorithms" />
+      </children>
+    </VBox>
+    <ComboBox fx:id="mapHeight" editable="false" layoutX="646.0" layoutY="191.0" prefWidth="150.0" promptText="Map Height">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="1" />
+          <String fx:value="2" />
+          <String fx:value="3" />
+          <String fx:value="4" />
+          <String fx:value="5" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <ComboBox fx:id="mapWidth" editable="false" layoutX="646.0" layoutY="234.0" prefWidth="150.0" promptText="Map Width">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="1" />
+          <String fx:value="2" />
+          <String fx:value="3" />
+          <String fx:value="4" />
+          <String fx:value="5" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <TextArea id="description" fx:id="descriptionText" layoutX="14.0" layoutY="400.0" prefHeight="175.0" prefWidth="845.0" text="Breadth First Search is a search algorithm that searches across all of the ocean. Breadth First Search searches horizontally across all of the ocean to find the treasure.&#10;ADVANTAGES: Breadth First Search cannot go into an infinite loop searching for the treasure.&#10;If the treasure is hidden deeply under the ocean, then Depth First Search will definitely have the upper hand against the other algorithms, since it search as deep as possible first before swimming across. &#10;DISADVANTAGES: If Depth First Search reaches the bottom of the map and the ocean continues to go deeper then the diver will continue to swim deeper into the ocean and become lost. This is because Depth First Search will continue to search deeper and will go into an infinite loop, forever swimming deeper into the ocean.&#10;&#10;" wrapText="true" />
+    <Label id="Title" alignment="CENTER" contentDisplay="CENTER" layoutX="553.0" layoutY="119.0" prefHeight="77.0" prefWidth="336.0" text="Map Options" textAlignment="CENTER" textFill="$x1">
+      <effect>
+        <Glow level="1.0" />
+      </effect>
+      <font>
+        <Font name="Comic Sans MS Bold" size="30.0" fx:id="x2" />
+      </font>
+    </Label>
+    <Label id="Title" alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="553.0" layoutY="264.0" prefHeight="77.0" prefWidth="336.0" text="Difficulty" textAlignment="CENTER" textFill="$x1">
+      <effect>
+        <Glow level="1.0" />
+      </effect>
+    </Label>
+    <VBox layoutX="646.0" layoutY="323.0" prefHeight="200.0" prefWidth="194.0">
+      <children>
+        <RadioButton id="breadthFirstSearch" fx:id="Easy" mnemonicParsing="false" selected="true" text="Easy" textFill="WHITE">
+          <toggleGroup>
+            <ToggleGroup fx:id="Difficulty" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton id="depthFirstSearch" fx:id="Medium" mnemonicParsing="false" selected="false" text="Medium" textFill="WHITE" toggleGroup="$Difficulty" />
+        <RadioButton id="depthFirstSearch" fx:id="Hard" mnemonicParsing="false" selected="false" text="Hard" textFill="WHITE" toggleGroup="$Difficulty" />
+      </children>
+    </VBox>
+    <Label id="Title" alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="0.0" layoutY="127.0" prefHeight="77.0" prefWidth="336.0" text="Diver" textAlignment="CENTER" textFill="$x1">
+      <effect>
+        <Glow level="1.0" />
+      </effect>
+    </Label>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="68.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@red%20diver.gif" />
+      </image>
+    </ImageView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="90.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@cartoon-scuba-diver-hi.png" />
+      </image>
+    </ImageView>
+  </children>
+</AnchorPane>

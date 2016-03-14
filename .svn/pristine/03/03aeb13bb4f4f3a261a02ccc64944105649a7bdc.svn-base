@@ -1,0 +1,23 @@
+package gui.movement;
+
+import javafx.scene.Group;
+import javafx.scene.layout.Pane;
+
+public class FishMovementThread implements Runnable {
+
+	private Pane fishPane;
+	
+	public FishMovementThread(Pane _fishPane){
+		fishPane = _fishPane;
+	}
+	
+	@Override
+	public void run() {
+		Group fish = new Group();
+		System.out.println(fish.getScaleY());
+		FishMovement fm = new FishMovement();
+		fm.start(fish);
+		fishPane.getChildren().add(fish);
+	}
+
+}

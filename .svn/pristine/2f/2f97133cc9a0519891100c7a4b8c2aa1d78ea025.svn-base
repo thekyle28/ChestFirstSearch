@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane styleClass="main-bg" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainMenuController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <Pane prefHeight="14.0" prefWidth="700.0" styleClass="wave" stylesheets="@../application.css" />
+            <Pane prefHeight="649.0" prefWidth="700.0" styleClass="sea-bg" stylesheets="@../application.css">
+               <children>
+                  <Pane layoutX="185.0" layoutY="79.0" prefHeight="160.0" prefWidth="330.0" styleClass="logo" stylesheets="@../application.css" />
+                  <Pane fx:id="playBtn" layoutX="240.0" layoutY="249.0" onMouseReleased="#gotoGameSelection" prefHeight="78.0" prefWidth="220.0" stylesheets="@../application.css">
+                     <styleClass>
+                        <String fx:value="play-btn" />
+                        <String fx:value="btn" />
+                     </styleClass>
+                  </Pane>
+                  <Pane fx:id="settingsBtn" layoutX="240.0" layoutY="339.0" prefHeight="78.0" prefWidth="220.0" stylesheets="@../application.css">
+                     <styleClass>
+                        <String fx:value="settings-btn" />
+                        <String fx:value="btn" />
+                     </styleClass>
+                  </Pane>
+                  <Pane fx:id="quitBtn" layoutX="240.0" layoutY="429.0" prefHeight="78.0" prefWidth="220.0" stylesheets="@../application.css">
+                     <styleClass>
+                        <String fx:value="quit-btn" />
+                        <String fx:value="btn" />
+                     </styleClass>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets top="86.0" />
+   </padding>
+</AnchorPane>
